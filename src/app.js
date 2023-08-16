@@ -10,3 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 console.log(sum(1, 2));
+console.log(process.env.NODE_ENV); //노드 환경정보, 웹펙 mode의 값이 출력된다.
+console.log(TWO); //2
+console.log(api.domain); //2
