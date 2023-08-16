@@ -1,4 +1,5 @@
 const path = require('path'); //node의 path 모듈을 사용한다.
+const MyWebpackPlugin = require('./my-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -32,5 +33,8 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+       new MyWebpackPlugin()
+    ]
 }
