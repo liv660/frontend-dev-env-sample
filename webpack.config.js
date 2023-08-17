@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        main: './src/app.js'
+        main: './app.js'
     },
     output: {
         path: path.resolve('./dist'), //path 모듈로 절대경로를 사용한다.
@@ -18,7 +18,8 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: path.resolve('./my-webpack-loader.js')
+                use: 'babel-loader',
+                exclude: /node_modules/
             },
             {
                 test: /\.css$/,
