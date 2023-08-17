@@ -1,1 +1,2 @@
-const alert = msg => window.alert(msg);
+console.log()
+(function () {}) ();
