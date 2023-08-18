@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint src --fix",
+    "start": "webpack-dev-server --progress"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "@babel/plugin-transform-arrow-functions": "^7.22.5",
     "@babel/plugin-transform-block-scoping": "^7.22.10",
     "@babel/plugin-transform-strict-mode": "^7.22.5",
+    "axios": "^1.4.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
     "eslint-config-prettier": "^9.0.0",

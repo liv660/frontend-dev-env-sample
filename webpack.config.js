@@ -7,12 +7,33 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
+    stats: 'errors-only',
     entry: {
         main: './src/app.js'
     },
     output: {
         path: path.resolve('./dist'), //path 모듈로 절대경로를 사용한다.
         filename: '[name].js' //entry에서 설정한 이름으로 동적할당 된다. 여기서는 main.js로 생성된다.
+    },
+    devServer: {
+        client: {
+            overlay: true,
+        },
+        //mockup api 사용하기
+        setupMiddlewares: (middlewares, devServer) => {
+            middlewares.unshift({
+				name: 'first',
+				path: '/api/users', //mockup api
+				middleware: (req, res) => {
+					res.send([
+						{id: 1, name: 'Alice'},
+						{id: 2, name: 'Bek'},
+						{id: 3, name: 'Chris'}
+					])
+				}
+			});
+			return middlewares;
+        },
     },
     module: {
         rules: [
