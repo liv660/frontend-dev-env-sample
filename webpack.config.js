@@ -16,6 +16,7 @@ module.exports = {
         filename: '[name].js' //entry에서 설정한 이름으로 동적할당 된다. 여기서는 main.js로 생성된다.
     },
     devServer: {
+        //hot: true, //hot module replacement 기능 사용, webpack-dev-server 버전 4이상부터는 default 값이 true이다.
         client: {
             overlay: true,
         },
@@ -37,10 +38,10 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                use: path.resolve('./my-webpack-loader.js')
-            },
+            // {
+            //     test: /\.js$/,
+            //     use: path.resolve('./my-webpack-loader.js')
+            // },
             {
                 test: /\.css$/,
                 use: [
